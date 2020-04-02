@@ -1,0 +1,11 @@
+version: '2.1'
+
+services:
+  first:
+    image: first
+    build: .
+    volumes:
+      - ./:/app
+    ports:
+      - 3000:3000
+    command: python first.py
