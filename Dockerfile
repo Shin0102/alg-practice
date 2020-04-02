@@ -14,10 +14,17 @@ EXPOSE 3000
 WORKDIR /app
 # ADD . /app
 
+RUN apk update && apk add build-base libzmq musl-dev python3 python3-dev zeromq-dev
+
 # Using pip:
 COPY requirements.txt .
+RUN pip install --upgrade pip
 RUN python3 -m pip install -r requirements.txt
-CMD ["python3", "-m", "first"]
+
+# reduce image size by cleaning up the build packages
+RUN apk del build-base musl-dev python3-dev zeromq-dev
+
+CMD ["/bin/sh"]
 
 # Using pipenv:
 #RUN python3 -m pip install pipenv

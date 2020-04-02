@@ -7,5 +7,5 @@ services:
     volumes:
       - ./:/app
     ports:
-      - 3000:3000
-    command: python first.py
+      - 8888:8888
+    command: jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root
