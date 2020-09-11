@@ -14,7 +14,7 @@ EXPOSE 3000
 WORKDIR /app
 # ADD . /app
 
-RUN apk update && apk add build-base libzmq musl-dev python3 python3-dev zeromq-dev
+RUN apk update && apk add build-base musl-dev python3-dev zeromq-dev python3 libzmq  
 
 # Using pip:
 COPY requirements.txt .

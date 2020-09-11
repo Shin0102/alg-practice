@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
   first:
-    image: first
+    image: first:latest
     build: .
     volumes:
       - ./:/app
