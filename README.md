@@ -1,6 +1,4 @@
-# 삽질하기
-
-삽질하고 놀기 위한 프로젝트
+# Jupyter Notebook(docker)
 
 
 ### Installing & test
