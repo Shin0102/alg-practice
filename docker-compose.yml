@@ -1,11 +1,13 @@
-version: '2.1'
+version: '3'
 
 services:
-  first:
-    image: first:latest
+  my_jupyter:
+    image: my_jupyter:latest
     build: .
     volumes:
-      - ./:/app
+      - type: bind
+        source: ./
+        target: /app
     ports:
       - 8888:8888
     command: jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root
